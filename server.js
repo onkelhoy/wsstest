@@ -1,8 +1,10 @@
 const WebSocketServer = require('ws').Server,
       express   = require('express'),
-      http      = require('http')
+      http      = require('http'),
+      helmet    = require('helmet')
 
 let app = express() 
+app.use(helmet())
 let port = process.env.PORT || 3000
 
 let server = http.createServer(app)
